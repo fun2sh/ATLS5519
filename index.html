@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <script src="resources/js/jquery-3.1.1.min.js"></script>
+    <script src="resources/js/covervideo.js"></script>
+    <script>
+        $(function(){
+            $('#header').load("Portal/navbar.html");
+        });
+    </script>
     <link href="resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="resources/css/myNav.css" rel="stylesheet">
     <link href="resources/css/portal.css" rel="stylesheet">
 
 
     <title>Index - Web Front-End Development Portal | Suresh Kumar</title>
-    <script src="resources/js/jquery-3.1.1.min.js"></script>
-    <script src="resources/js/covervideo.js"></script>
-    <script>
-        $(function(){
-            $('#header').load("portal/navbar.html");
-        });
-    </script>
+
 
 </head>
 <body>
@@ -25,19 +27,29 @@
 <!-- source http://www.coverr.co/ -->
 <div class="homepage-hero-module">
     <div class="video-container">
-        <div class="filter"></div>
+
         <video autoplay loop class="fillWidth">
-            <source src="resources/video/Love-Coding/MP4/Love-Coding.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-            <source src="resources/video/Love-Coding/WEBM/Love-Coding.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="resources/video/Up/MP4/Up.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="resources/video/Up/WEBM/Up.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
         </video>
         <div class="poster hidden">
-            <img src="resources/video/Love-Coding/Snapshots/Love-Coding.jpg" alt="">
+            <img src="resources/video/Up/Snapshots/Up.jpg" alt="">
         </div>
     </div>
 </div>
 
-<!-- Bootstrap core JavaScript
-================================================== -->
+<div class="row" style="z-index: 20; position: absolute; top: 25%; left:5%; margin-right: 0; color:black;">
+    <div class="col-md-8">
+        <h2>Welcome to My Portal</h2>
+        <p class="lead">Hi! I am a 2nd year Computer Science Master’s student at University of Colorado Boulder. This is a portal for Web Front-
+        End Development class which holds my work done throughout the semester.</p>
+    </div>
+    <div class="col-md-4">
+        <img src="resources/images/1.jpg" alt="" width="100%" class="img-circle">
+    </div>
+</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="resources/js/jquery-3.1.1.min.js"></script>
 <script>window.jQuery || document.write('<script src="resources/js/jquery-3.1.1.min.js"><\/script>')</script>
