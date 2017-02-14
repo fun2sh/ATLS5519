@@ -1,10 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Lab 1</title>
+    <link rel="stylesheet" type="text/css" href="lab1.css">
 </head>
 <body>
 
+<div class="hidden" id="coldplay">
+    <h2>Coldplay</h2>
+
+    <div style="width: 25%; margin-left: auto; margin-right: auto;">
+        <ol>
+            <li>Hymn for the weekend</li>
+            <li>The Scientist</li>
+            <li>Yellow</li>
+            <li>Adventure of a Lifetime</li>
+        </ol>
+    </div>
+</div>
+
+<div class = "hidden" id="keane">
+    <h2>Keane</h2>
+    <div style="width: 25%; margin-left: auto; margin-right: auto;">
+        <ol>
+            <li>Somewhere Only We Know</li>
+            <li>Everybody's Changing</li>
+            <li>Strangeland</li>
+            <li>Nothing in My Way</li>
+        </ol>
+    </div>
+</div>
+<div id="thekillers" class="hidden">
+    <h2>The Killers</h2>
+    <div style="width: 20%; margin-left: auto; margin-right: auto;">
+        <ol>
+            <li>Mr. Brightside</li>
+            <li>Somebody Told Me</li>
+            <li>When We Were Young</li>
+            <li>Human</li>
+        </ol>
+    </div>
+</div>
+
+<script>
+
+
+    for(var i=0;i<5;i++){
+        var artist = prompt("Enter an artist name from the list below to see their popular songs. \n 1.Coldplay \n 2.Keane \n 3.The Killers")
+
+        switch (artist.toLowerCase()){
+            case 'coldplay': case 'keane': case 'the killers':
+                var color = prompt("Enter a color");
+                break;
+            default: break;
+        }
+
+        if(artist.toLowerCase()=='coldplay')
+        {
+            elem = document.getElementById("coldplay");
+            elem.style.display="inline";
+            image = document.createElement("img");
+            image.src="coldplay.jpg";
+            image.setAttribute("class","img");
+            elem.insertBefore(image,elem.children[1]);
+            elem.getElementsByTagName("ol")[0].style.color=color;
+
+
+            break;
+        }
+
+        else if (artist.toLowerCase()=='keane') {
+            elem = document.getElementById("keane");
+            elem.style.display="inline";
+            image = document.createElement("img");
+            image.src="keane.jpg";
+            image.setAttribute("class","img");
+            elem.insertBefore(image,elem.children[1]);
+            elem.getElementsByTagName("ol")[0].style.color=color;
+
+            break;
+        }
+
+        else if (artist.toLowerCase()=='the killers') {
+            elem = document.getElementById("thekillers");
+            elem.style.display="inline";
+            image = document.createElement("img");
+            image.src="thekillers.jpg";
+            image.setAttribute("class","img");
+            elem.insertBefore(image,elem.children[1]);
+            elem.getElementsByTagName("ol")[0].style.color=color;
+
+            break;
+        }
+
+        else{
+            if(i==4){alert("No more attempts allowed!!");
+                    break;}
+            alert("Please enter artist name only from the list below \n 1.Coldplay \n 2.Keane \n 3.The Killers \n" +
+                "You entered: " + artist + "\n Attempt number " + (i+1))
+        }
+    }
+
+
+</script>
 </body>
 </html>

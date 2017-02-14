@@ -1,0 +1,19 @@
+body      {
+    background: #EFEFEF;
+}
+.hidden {
+    display:none;
+}
+
+h2 {text-align: center;
+    color: #000000;}
+
+ol{
+    font-size: 20px;
+    color: #0f0f0f;
+}
+
+.img {display: block;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;}
