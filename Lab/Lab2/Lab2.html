@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 2</title>
+    <style type="text/css">
+        body {
+            background-color: #EFEFEF;
+            text-align: center;
+            font-size: 16px;
+        }
+        table, th, td {
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Your Bill Details</h2>
+<div id="bill">
+    <table class="center">
+        <tr>
+            <th>Item Name</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+        </tr>
+    </table>
+</div>
+<script>
+    var itemname = [];
+    var itemprice = [];
+    var quantity = [];
+    var total=0;
+    var invalid = true;
+    while (invalid){
+        var noofitem = prompt("Enter total number of items:");
+        if (isNaN(noofitem)) {alert("Enter a number");}
+        else if (noofitem <0) {alert("Enter a positive number");}
+        else invalid = false
+    }
+
+
+    for (var i=0;i<noofitem;i++){
+
+        itemname[i] = prompt('Enter item ' + (i+1) + ' name : ');
+        itemprice[i] = prompt ('Enter item ' + (i+1) + ' price: ');
+        quantity[i] = prompt('Enter quantity of item ' + (i+1) + ' : ');
+
+    }
+
+    var table = document.getElementById('bill').firstElementChild;
+
+    for (var i = 0; i < itemname.length; i++) {
+        var row = document.createElement('tr');
+
+        var cell = document.createElement('td');
+        cell.textContent = itemname[i];
+        row.appendChild(cell);
+
+        var cell = document.createElement('td');
+        cell.textContent = itemprice[i];
+        row.appendChild(cell);
+
+        var cell = document.createElement('td');
+        cell.textContent = quantity[i];
+        row.appendChild(cell);
+
+        var cell = document.createElement('td');
+        cell.textContent = quantity[i] * itemprice[i];
+        row.appendChild(cell);
+
+        table.appendChild(row);
+
+        total += quantity[i] * itemprice[i];
+
+    }
+    document.write("<p> Bill Total = "+ total);
+</script>
+</body>
+</html>
